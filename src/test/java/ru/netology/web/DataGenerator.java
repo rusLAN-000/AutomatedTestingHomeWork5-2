@@ -20,7 +20,7 @@ public class DataGenerator {
             .setContentType(ContentType.JSON)
             .log(LogDetail.ALL)
             .build();
-    private static final Faker faker = new Faker(new Locale("en"));
+    private static final Faker FAKER = new Faker(new Locale("en"));
 
     private DataGenerator() {
     }
@@ -36,12 +36,12 @@ public class DataGenerator {
     }
 
     public static String getRandomLogin() {
-        String login = faker.name().username();
+        String login = FAKER.name().username();
         return login;
     }
 
     public static String getRandomPassword() {
-        String password = faker.internet().password();
+        String password = FAKER.internet().password();
         return password;
     }
 
